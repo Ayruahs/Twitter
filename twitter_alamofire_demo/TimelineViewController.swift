@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class TimelineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -16,7 +17,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -41,7 +42,9 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
         
         cell.tweet = tweets[indexPath.row]
-        
+        let urlString = URL(string: cell.tweet.profilePictureURL)
+        cell.profilePictureImageView.af_setImage(withURL: urlString!)
+        //print(cell.tweet.profilePictureURL)
         return cell
     }
     
@@ -56,6 +59,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     @IBAction func didTapLogout(_ sender: Any) {
+        User.current = nil
         APIManager.shared.logout()
     }
     

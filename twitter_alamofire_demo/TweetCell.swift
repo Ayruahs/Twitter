@@ -12,6 +12,8 @@ class TweetCell: UITableViewCell {
     
     @IBOutlet weak var tweetTextLabel: UILabel!
     
+    @IBOutlet weak var profilePictureImageView: UIImageView!
+    
     var tweet: Tweet! {
         didSet {
             tweetTextLabel.text = tweet.text
