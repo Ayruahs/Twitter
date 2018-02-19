@@ -9,6 +9,6 @@
 import Foundation
 
 class APIDetails{
-    static let consumerKey = "GWFjYKsfQ8vM7SsFVr8y8fkMH"
-    static let consumerSecret = "7F7yAC8MKghq1ncWEoxbkekO4yNRqugJgAOSIF9PUuEItU3CRb"
+    static let consumerKey = "ZJqck7Rg9BqAw6LMPoRBftqIO"
+    static let consumerSecret = "CPIPyS1SLMJucW3O0ModvOmtxjckb4HHbnizlyoMIoW6gWT1Jy"
 }
